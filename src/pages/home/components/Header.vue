@@ -23,14 +23,14 @@
 <style lang="stylus" scoped>
   @import "~styles/varibles.styl"
   .header
-    background-color: $bgColor;
-    line-height: .86rem
-    display: flex
-    height: .86rem
-    color: #fff
+    background-color $bgColor;
+    line-height .86rem
+    display flex
+    height .86rem
+    color #fff
     .header-left
-      width:.64rem
-      float: left
+      width .64rem
+      float left
     .header-input
       flex:1
       height : .64rem
