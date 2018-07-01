@@ -6,10 +6,13 @@
     <div class="header-input">
       <span class="iconfont">&#xe632;</span>
       输入游玩城市/景点/游玩主题</div>
-    <div class="header-right">
-       {{this.city}}
-      <span class="iconfont">&#xe695;</span>
-    </div>
+    <router-link to="/city">
+      <div class="header-right">
+        {{this.city}}
+        <span class="iconfont">&#xe695;</span>
+      </div>
+    </router-link>
+
   </div>
 
 </template>
@@ -48,5 +51,6 @@
       width:1.24rem
       float:rigth
       text-align: center
+      color #fff
 
 </style>
