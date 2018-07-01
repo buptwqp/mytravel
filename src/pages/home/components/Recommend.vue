@@ -2,7 +2,7 @@
  <div>
    <div class="recommend-title">热销推荐</div>
    <ul>
-     <li class="item border-bottom" v-for="item of recommendList" :key="item.id">
+     <li class="item border-bottom" v-for="item of list" :key="item.id">
        <img class="item-img" :src="item.imgUrl"/>
        <div class="item-info">
          <p class="item-title">{{item.title}}</p>
@@ -17,32 +17,9 @@
 <script>
     export default {
         name: "Recommend",
-        data () {
-        return {
-          recommendList:[{
-            id:'001',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1707/a3/a3924161475dee37a3.img.jpg_200x200_5ba00364.jpg',
-            title:'青岛海昌极地海洋世界elliosis',
-            desc:'青岛海昌极地海洋世界'
-          },{
-            id:'002',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1707/a3/a3924161475dee37a3.img.jpg_200x200_5ba00364.jpg',
-            title:'青岛海昌极地海洋世界elliosis',
-            desc:'青岛海昌极地海洋世界'
-          },{
-            id:'003',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1707/a3/a3924161475dee37a3.img.jpg_200x200_5ba00364.jpg',
-            title:'青岛海昌极地海洋世界elliosis',
-            desc:'青岛海昌极地海洋世界'
-          },{
-            id:'004',
-            imgUrl:'http://img1.qunarzz.com/sight/p0/1707/a3/a3924161475dee37a3.img.jpg_200x200_5ba00364.jpg',
-            title:'青岛海昌极地海洋世界elliosis',
-            desc:'青岛海昌极地海洋世界'
-          },]
-
+        props:{
+          list:Array
         }
-      }
     }
 
 </script>
