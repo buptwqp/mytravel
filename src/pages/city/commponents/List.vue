@@ -1,15 +1,9 @@
 <template>
-  <div class="list" ref="wrapper">
+  <div class="list" ref='wrapper'>
     <div>
       <div class="area">
         <div class="title border-topbottom">当前城市</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
           <div class="button-wrapper">
             <div class="button">北京</div>
           </div>
@@ -19,68 +13,17 @@
       <div class="area">
         <div class="title border-topbottom">热门城市</div>
         <div class="button-list">
-          <div class="button-wrapper">
-            <div class="button">北京</div>
+          <div class="button-wrapper" v-for="item of hot" :key="item.id">
+            <div class="button">{{item.name}}</div>
           </div>
-          <div class="button-wrapper">
-            <div class="button ">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
-          <div class="button-wrapper">
-            <div class="button">北京</div>
-          </div>
+
         </div>
       </div>
 
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item-list">
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item-list">
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item-list">
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item-list">
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-        </div>
-      </div>
-      <div class="area">
-        <div class="title border-topbottom">A</div>
-        <div class="item-list">
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
-          <div class="item border-bottom">甘谷</div>
+      <div class="area" v-for="(item,key) of cities" :key="key">
+        <div class="title border-topbottom">{{key}}</div>
+        <div class="item-list" v-for="innerItem of item" :key="item.id">
+          <div class="item border-bottom">{{innerItem.name}}</div>
         </div>
       </div>
 
@@ -92,6 +35,10 @@
   import BScroll from 'better-scroll'
   export default {
     name: "List",
+    props: {
+      hot : Array,
+      cities: Object
+    },
     mounted () {
       this.scroll=new BScroll(this.$refs.wrapper)
     }
@@ -110,14 +57,13 @@
       border-color #ccc
 
   .list
-    overflow: hidden
-    position: absolute
-    top: 1.58rem
-    left: 0
-    right: 0
-    bottom: 0
+    position absolute
+    overflow hidden
+    top 1.52rem
+    left 0
+    right 0
+    bottom 0
     width 100%
-    background #fff;
     .title
       text-align left
       line-height .44rem
